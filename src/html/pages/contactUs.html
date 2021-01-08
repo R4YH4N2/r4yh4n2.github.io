@@ -1,5 +1,44 @@
 <div id="contactUs_Wrapper" class="page-content">
     <section>
-        fsefsefsefsefsefsfsedf
+        <div class="row" style="margin: 0px !important;">
+            <div class="col-lg-3"></div>
+            <div style="font-family: anton;" class="text-warning col-lg-6 text-center display-4">
+                GET IN TOUCH WITH US
+            </div>
+            <div class="col-lg-3"></div>
+        </div>
+        <div class="row" style="margin: 0px !important;">
+            <div class="col-lg-3"></div>
+            <div style="margin-top: 30px; font-family: anton;" class="col-lg-6">
+                <label class="text-white">Name :</label>
+                <input class="form-control bg-dark btn-outline-light text-white" placeholder="e.g: Johnny" />
+            </div>
+            <div class="col-lg-3"></div>
+        </div>
+        <div class="row" style="margin: 0px !important;">
+            <div class="col-lg-3"></div>
+            <div style="margin-top: 10px; font-family: anton;" class="col-lg-6">
+                <label class="text-white">Email Address* :</label>
+                <input class="form-control bg-dark btn-outline-light text-white" placeholder="e.g: johnny.appleseed@adlottomail.co.uk" />
+            </div>
+            <div class="col-lg-3"></div>
+        </div>
+        <div class="row" style="margin: 0px !important;">
+            <div class="col-lg-3"></div>
+            <div style="margin-top: 10px; font-family: anton;" class="col-lg-6">
+                <label class="text-white">Query:</label>
+                <input class="form-control bg-dark btn-outline-light text-white" placeholder="Please enter your query" />
+            </div>
+            <div class="col-lg-3"></div>
+        </div>
+        <div class="row" style="margin: 0px !important;">
+            <div class="col-lg-5"></div>
+            <div style="margin-top: 30px; font-family: anton;" class="col-lg-2 text-center">
+                <span class="text-danger" v-if="signInStatus != null">{{signInStatus}}</span>
+                <submit class="btn btn-warning text-center" style="width: 100%;" v-on:click="">Submit</submit>
+                <span class="text-white">OR</span>
+            </div>
+            <div class="col-lg-5"></div>
+        </div>
     </section>
 </div>
