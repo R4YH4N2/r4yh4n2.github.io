@@ -1,0 +1,90 @@
+<head>
+    <!-- <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> -->
+    <!-- JQuery -->
+    <script src="src/frameworks/JQuery.js"></script>
+    <!-- BootStrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="src/frameworks/Popper.js"></script>
+    <script src="src/frameworks/Bootstrap.js"></script>
+    <!-- Vue.js -->
+    <script src="src/frameworks/vue/vue.js"></script>
+    <script src="src/frameworks/vue/router.js"></script>
+    <!-- Charts.js -->
+    <script src="src/frameworks/Charts.js"></script>
+    <!-- Underscore.js -->
+    <script src="src/frameworks/underscore.js"></script>
+    <!-- Day.js -->
+    <script src="src/frameworks/day.js"></script>
+    <script src="src/frameworks/utcPlugin.js"></script>
+    <script>
+        dayjs.extend(window.dayjs_plugin_utc)
+    </script>
+    <!-- CSS Links -->
+    <link rel="stylesheet" type="text/css" href="src/css/styles.css">
+    <link rel="stylesheet" type="text/css" href="src/css/font/style.css">
+    <!-- Webpage Title -->
+    <title>Ad-Lotto UK</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+</head>
+
+<body style="background-color: #191919;">
+    <!-- Vue Reference -->
+    <div id="app" style="font-family: 'oswald', sans-serif;;">
+        <div>
+            <div class="container-fluid" style="background-color: black;">
+                <router-link to="/HomePage">
+                    <div id="logoMain" class="p-4">
+                        <img src="src/resources/13128652dab8451db4ce3e8b1b00d5b0.png" width="130" height="130" />
+                        <a href="./" target="_self" style="font-weight: 900; font-size: 30px; padding: 20px;">AD-LOTTO UK</a>
+                    </div>
+                </router-link>
+            </div>
+            <!-- The overlay -->
+            <div id="navBar" class="overlay">
+                <!-- Button to close the overlay navigation -->
+                <a class="closebtn" v-on:click="closeNav()">&times;</a>
+                <!-- Overlay content -->
+                <div class="overlay-content">
+                    <div v-on:click="closeNav();">
+                        <router-link to="/HomePage">Home</router-link>
+                    </div>
+                    <div v-on:click="closeNav();" v-if="isSignedIn">
+                        <router-link to="/Play">Play</router-link>
+                    </div>
+                    <div v-on:click="closeNav();">
+                        <router-link to="/FAQ">FAQ</router-link>
+                    </div>
+                    <div v-on:click="closeNav();">
+                        <router-link to="/ContactUs">Contact Us</router-link>
+                    </div>
+                    <div v-on:click="closeNav();" v-if="isSignedIn">
+                        <router-link to="/HomePage">Log Out</router-link>
+                    </div>
+                    <div v-on:click="closeNav();" v-if="!isSignedIn">
+                        <router-link to="/SignUp">Log In/Sign Up</router-link>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Use any element to open/show the overlay navigation menu -->
+            <nav class="navbar navbar-dark">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon" v-on:click="openNav();"></span>
+                </button>
+            </nav>
+            <router-view></router-view>
+        </div>
+    </div>
+    <!-- Script Links -->
+    <script src="src/js/rootObjects.js"></script>
+    <script src="src/js/pages/homePage.js"></script>
+    <script src="src/js/pages/signUp.js"></script>
+    <script src="src/js/pages/logIn.js"></script>
+    <script src="src/js/pages/play.js"></script>
+    <script src="src/js/pages/contactUs.js"></script>
+    <script src="src/js/index.js"></script>
+</body>

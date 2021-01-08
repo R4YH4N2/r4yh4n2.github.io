@@ -1,0 +1,68 @@
+<div id="signUp-Wrapper" class="page-content">
+    <section>
+        <div class="row" style="margin: 0px !important;">
+            <div class="col-lg-3"></div>
+            <div style="font-family: anton;" class="text-warning col-lg-6 text-center display-4">
+                CREATE A NEW ACCOUNT
+            </div>
+            <div class="col-lg-3"></div>
+        </div>
+        <div class="row" style="margin: 0px !important;">
+            <div class="col-lg-3"></div>
+            <div style="margin-top: 30px;" class="text-white col-lg-6 text-center">
+                Enter Your Details Below
+            </div>
+            <div class="col-lg-3"></div>
+        </div>
+        <div class="row" style="margin: 0px !important;">
+            <div class="col-lg-3"></div>
+            <div style="margin-top: 30px; font-family: anton;" class="col-lg-6">
+                <label class="text-white">First Name* :</label>
+                <input class="form-control bg-dark btn-outline-light text-white" placeholder="e.g: Johnny" v-model="userFirstName" />
+            </div>
+            <div class="col-lg-3"></div>
+        </div>
+        <div class="row" style="margin: 0px !important;">
+            <div class="col-lg-3"></div>
+            <div style="margin-top: 10px; font-family: anton;" class="col-lg-6">
+                <label class="text-white">Last Name* :</label>
+                <input class="form-control bg-dark btn-outline-light text-white" placeholder="e.g: Appleseed" v-model="userLastName" />
+            </div>
+            <div class="col-lg-3"></div>
+        </div>
+        <div class="row" style="margin: 0px !important;">
+            <div class="col-lg-3"></div>
+            <div style="margin-top: 10px; font-family: anton;" class="col-lg-6">
+                <label class="text-white">Email Address* :</label>
+                <input class="form-control bg-dark btn-outline-light text-white" placeholder="e.g: johnny.appleseed@adlottomail.co.uk" v-model="userEmailAddress" />
+            </div>
+            <div class="col-lg-3"></div>
+        </div>
+        <div class="row" style="margin: 0px !important;">
+            <div class="col-lg-3"></div>
+            <div style="margin-top: 10px; font-family: anton;" class="col-lg-6">
+                <label class="text-white">Confirm Email Address* :</label>
+                <input class="form-control bg-dark btn-outline-light text-white" placeholder="e.g: johnny.appleseed@adlottomail.co.uk" v-model="userConfirmEmailAddress" />
+            </div>
+            <div class="col-lg-3"></div>
+        </div>
+        <div class="row" style="margin: 0px !important;">
+            <div class="col-lg-3"></div>
+            <div style="margin-top: 10px; font-family: anton;" class="col-lg-6">
+                <label class="text-white">Telephone :</label>
+                <input class="form-control bg-dark btn-outline-light text-white" placeholder="e.g: 07654 123 456" v-model="userTelephoneNumber" />
+            </div>
+            <div class="col-lg-3"></div>
+        </div>
+        <div class="row" style="margin: 0px !important;">
+            <div class="col-lg-5"></div>
+            <div style="margin-top: 30px; font-family: anton;" class="col-lg-2 text-center">
+                <span class="text-danger" v-if="signInStatus != null">{{signInStatus}}</span>
+                <submit class="btn btn-warning text-center" style="width: 100%;" v-on:click="userCheckDetails();">Sign Up</submit>
+                <span class="text-white">OR</span>
+                <router-link to="/LogIn" class="btn btn-warning text-center" style="width: 100%;">Log In</router-link>
+            </div>
+            <div class="col-lg-5"></div>
+        </div>
+    </section>
+</div>
