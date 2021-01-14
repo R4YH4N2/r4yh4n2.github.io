@@ -1,0 +1,68 @@
+<div id="homePage_Wrapper" class="page-content" style="margin-top: 9rem!important;">
+    <div class="jumbotron text-center" style="background-color: rgba(0, 0, 0, 0.493) !important;">
+        <div>
+            <img src="src/resources/allBetsAreOn.png" width="900" height="500" />
+        </div>
+        <div class="row">
+            <div class="col-7"></div>
+            <div class="col-5">
+                <img src="src/resources/money-PNG-e1532606569895.png" width="250" height="250" />
+            </div>
+            <div class="col-4">
+                <img src="src/resources/lottery_art_balls.png" width="350" height="250" />
+            </div>
+            <div class="col-8">
+            </div>
+        </div>
+    </div>
+    <div style="height: 70%; ">
+        <img class="changeOnHover" style="position: absolute; bottom: 10px; left: 48%; width: 100px;" src="src/resources/Picture1.png" v-on:click="scrollIntoView('homePageContent')" />
+    </div>
+    <div class="row" id="homePageContent" style="height: 5%;">
+    </div>
+    <div style="height: 100%;">
+        <div class="row mt-2" style="display: flex;">
+            <div class="col ml-4" style="flex: 1;">
+                <div class="jumbotron container text-center text-white" style="background-color:rgb(19 18 18) !important; height: 100%;">
+                    <div class="display-4">Have you ever wanted to win the lottery?</div>
+                    <h2>Did you know: The chances of you winning the lottery jackpot are<span class="font-weight-bolder text-danger"> 1 in 139,838,160</span> ?
+                    </h2>
+                    <h2>That only gives you a<span class="font-weight-bolder text-danger"> 0.000000715112%</span> chance of winning. Ever.
+                    </h2>
+                    <h3>Sometimes, the odds just aren't in your favour.</h3>
+                    <h4>So why should you pay for a ticket for something that has a 99.9999992849% chance of failing?</h4>
+                    <h4><span class="text-danger">The short answer: You shouldn't.</span></h4>
+                </div>
+            </div>
+            <div class="col mr-4" style="flex: 1;">
+                <div class="jumbotron container text-center text-white" style="background-color: rgb(19 18 18) !important; height: 100%;">
+                    <div class="display-4">What If?</div>
+                    <h2>
+                        Life is FULL of what ifs, but what if you could obtain a ticket into a lottery for free? How about 5? Thats what we're here for!
+                    </h2>
+                    <h2>
+                        Ad-Lotto UK was created with the sole purpose of providing everyone with a fair chance at winning the lottery for free! <br><span class="text-danger">To find out more about how Ad-Lotto UK works, please visit our FAQ section up there ^</span><br> or click
+                        <router-link to="/FAQ" style="text-decoration: none; color: white;">
+                            here
+                        </router-link>
+                    </h2>
+                </div>
+            </div>
+        </div>
+        <div class="row" style="position: relative; top: 13%; left: 48%; width: 100px;">
+            <div v-on:click="scrollIntoView('homepage_Second')">
+                <img class="changeOnHover" style="width: 100px;" src="src/resources/Picture1.png" />
+            </div>
+        </div>
+    </div>
+    <div id="homepage_Second">
+        <div class="jumbotron container text-center text-white" style="background-color: rgb(19 18 18) !important; height: 100%;">
+
+        </div>
+    </div>
+    <footer class="page-footer font-small text-warning bg-dark">
+        <div class="footer-copyright text-center py-3">© 2020 Copyright:
+            <a href="#">BornHub</a>
+        </div>
+    </footer>
+</div>

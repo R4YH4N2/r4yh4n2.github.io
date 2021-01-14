@@ -40,4 +40,7 @@ AdLottoUK.o.index = new Vue({
         },
     },
     router,
+    mounted() {
+        this.$router.push('/homePage');
+    }
 })

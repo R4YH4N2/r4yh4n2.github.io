@@ -2,6 +2,8 @@
 @media screen and (min-width: 992px) {
     .responsive-mobile-img1 {
         float: right;
+        width: 25vw;
+        height: 38vw;
     }
 
     .responsive-menuBar-desktop {
@@ -10,6 +12,14 @@
 
     .responsive-menuBar-mobile {
         opacity: 0;
+    }
+
+    .responsive-text-mobile {
+        font-size: 2vw;
+    }
+
+    .responsive-title-mobile {
+        font-size: 3vw;
     }
 }
 
@@ -28,6 +38,14 @@
 
     .responsive-menuBar-mobile {
         opacity: 1;
+    }
+
+    .responsive-text-mobile {
+        font-size: 3vw;
+    }
+
+    .responsive-title-mobile {
+        font-size: 4vw;
     }
 }
 
