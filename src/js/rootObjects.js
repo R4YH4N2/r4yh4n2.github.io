@@ -4,7 +4,7 @@ var AdLottoUK = {
     f: {
         // Pages
         p: {
-
+            dataTransfer: null,
         },
         // Globals
         g: {
@@ -14,7 +14,12 @@ var AdLottoUK = {
     },
     // Objects
     o: {
+        AppData: {
+            baseURL: "http://localhost:8022/PersonalProjects/AdLotto/src/php/",
+        },
         userData: {
+            username: null,
+            password: null,
             isSignedIn: false,
         },
         // Pages II
@@ -24,11 +29,6 @@ var AdLottoUK = {
             logIn: null,
             play: null,
             contactUs: null
-        },
-        // App Presets
-        AppData: {
-            // Base URL for API Calls
-            baseURL: window.location.origin,
         },
         // Page Ref
         index: null,

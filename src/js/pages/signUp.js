@@ -11,7 +11,9 @@ AdLottoUK.o.pages.signUp = Vue.component('SignUp', function (resolve, reject) {
                         userFirstName: null,
                         userLastName: null,
                         userEmailAddress: null,
-                        userConfirmEmailAddress: null,
+                        username: null,
+                        userPassword: null,
+                        userConfirmPassword: null,
                         userTelephoneNumber: null,
                         signInStatus: null,
                     }
@@ -22,11 +24,13 @@ AdLottoUK.o.pages.signUp = Vue.component('SignUp', function (resolve, reject) {
                     },
                     userCheckDetails: function () {
                         let self = this;
-                        if (self.userFirstName != null && self.userLastName != null && self.userEmailAddress == self.userConfirmEmailAddress) {
+                        if (self.userFirstName != null && self.userLastName != null && self.userEmailAddress != null && self.userPassword != null && self.userPassword == self.userConfirmPassword) {
                             let _userDetailsObj = {
+                                username: self.username,
+                                email: self.userEmailAddress,
+                                password: self.userPassword,
                                 firstName: self.userFirstName,
-                                lastName: self.userLastName,
-                                emailAddress: self.userEmailAddress,
+                                surname: self.userLastName,
                                 telephone: self.userTelephoneNumber
                             }
                             self.userSignUpGranted(_userDetailsObj);
@@ -36,9 +40,35 @@ AdLottoUK.o.pages.signUp = Vue.component('SignUp', function (resolve, reject) {
                         }
                     },
                     userSignUpGranted: function (_userDetailsObj) {
+                        let self=this;
                         // PHP To Database
-                        console.log("Sign in successful");
+                        self.setUsers(_userDetailsObj);
+                        console.log(_userDetailsObj);
                         self.signInStatus = "Sign in Successful";
+                    },
+                    setUsers: function (_userDataObj) {
+                    return new Promise((resolve, reject) => {
+                            $.ajax({
+                                url: AdLottoUK.o.AppData.baseURL + "addUser.php",
+                                type: "POST",
+                                dataType: "json",
+                                data: {
+                                    Username: _userDataObj.username,
+                                    Email: _userDataObj.email,
+                                    Password: _userDataObj.password,
+                                    FirstName: _userDataObj.firstName,
+                                    Surname: _userDataObj.surname,
+                                    Telephone: _userDataObj.telephone
+                                },
+                                success: function (data) {
+                                    console.log("User signed up");
+                                    resolve(data);
+                                },
+                                error: function (jqXHR, textStatus, errorThrown) {
+                                    console.log("Error");
+                                }
+                            });
+                        });
                     }
                 },
                 mounted() {

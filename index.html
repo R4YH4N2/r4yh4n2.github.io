@@ -63,7 +63,7 @@
                         <router-link to="/ContactUs">Contact Us</router-link>
                     </div>
                     <div v-on:click="closeNav();" v-if="isSignedIn">
-                        <router-link to="/HomePage">Log Out</router-link>
+                        <a v-on:click="logOut();">Log Out</a>
                     </div>
                     <div v-on:click="closeNav();" v-if="!isSignedIn">
                         <router-link to="/SignUp">Log In/Sign Up</router-link>
@@ -83,6 +83,7 @@
     <!-- Script Links -->
     <script src="src/js/rootObjects.js"></script>
     <script src="src/js/pages/homePage.js"></script>
+    <script src="src/js/pages/dataTransfer.js"></script>
     <script src="src/js/pages/signUp.js"></script>
     <script src="src/js/pages/logIn.js"></script>
     <script src="src/js/pages/play.js"></script>

@@ -15,6 +15,15 @@ AdLottoUK.o.pages.homePage = Vue.component('HomePage', function (resolve, reject
                     initialise: function () {
 
                     },
+                    getStarted: function () {
+                        let self = this;
+                        let path = AdLottoUK.o.index.signInToggle();
+                        if (path == true) {
+                            self.$router.push('/play');
+                        } else {
+                            self.$router.push('/signUp')
+                        }
+                    }
                 },
                 mounted() {
                     this.initialise();
