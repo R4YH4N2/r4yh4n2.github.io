@@ -16,11 +16,34 @@ AdLottoUK.o.pages.signUp = Vue.component('SignUp', function (resolve, reject) {
                         userConfirmPassword: null,
                         userTelephoneNumber: null,
                         signInStatus: null,
+                        isSectionOneUserInfo: true,
+                        isSectionTwoUserInfo: false,
+                        isSectionThreeUserInfo: false,
                     }
                 },
                 methods: {
                     initialise: function () {
 
+                    },
+                    nextInfo: function(_section) {
+                        let self=this;
+                        if(_section == 'FirstToSecond') {
+                            if(self.userFirstName != null && self.userLastName != null) {
+                            self.isSectionOneUserInfo = false;
+                            self.isSectionTwoUserInfo = true;
+                            self.isSectionThreeUserInfo = false;
+                            } else {
+                                // Enter all details
+                            }
+                        } else if(_section == "SecondToThird") {
+                            if(self.userEmailAddress != null && self.username != null && self.userPassword != null && self.userConfirmPassword != null && self.userPassword == self.userConfirmPassword) {
+                            self.isSectionOneUserInfo = false;
+                            self.isSectionTwoUserInfo = false;
+                            self.isSectionThreeUserInfo = true;
+                            } else {
+                                // Enter all details
+                            }
+                        }
                     },
                     userCheckDetails: function () {
                         let self = this;

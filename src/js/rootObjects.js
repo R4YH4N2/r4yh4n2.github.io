@@ -15,7 +15,7 @@ var AdLottoUK = {
     // Objects
     o: {
         AppData: {
-            baseURL: "http://localhost:8022/PersonalProjects/AdLotto/src/php/",
+            baseURL: window.location.origin + "/src/php/",
         },
         userData: {
             username: null,

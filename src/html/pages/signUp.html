@@ -14,6 +14,7 @@
             </div>
             <div class="col-lg-3"></div>
         </div>
+        <section v-if="isSectionOneUserInfo && !isSectionTwoUserInfo && !isSectionThreeUserInfo">
         <div class="row" style="margin: 0px !important;">
             <div class="col-lg-3"></div>
             <div style="margin-top: 30px; font-family: anton;" class="col-lg-6">
@@ -30,6 +31,16 @@
             </div>
             <div class="col-lg-3"></div>
         </div>
+        <div class="row" style="margin: 0px !important;">
+            <div class="col-lg-5"></div>
+            <div style="margin-top: 30px; font-family: anton;" class="col-lg-2 text-center">
+                <!-- <span class="text-danger" v-if="signInStatus != null">{{signInStatus}}</span> -->
+                <submit class="btn btn-warning text-center" style="width: 100%;" v-on:click="nextInfo('FirstToSecond');">Next</submit>
+            </div>
+            <div class="col-lg-5"></div>
+        </div>
+        </section>
+        <section v-if="!isSectionOneUserInfo && isSectionTwoUserInfo && !isSectionThreeUserInfo">
         <div class="row" style="margin: 0px !important;">
             <div class="col-lg-3"></div>
             <div style="margin-top: 10px; font-family: anton;" class="col-lg-6">
@@ -62,10 +73,20 @@
             </div>
             <div class="col-lg-3"></div>
         </div>
+         <div class="row" style="margin: 0px !important;">
+            <div class="col-lg-5"></div>
+            <div style="margin-top: 30px; font-family: anton;" class="col-lg-2 text-center">
+                <!-- <span class="text-danger" v-if="signInStatus != null">{{signInStatus}}</span> -->
+                <submit class="btn btn-warning text-center" style="width: 100%;" v-on:click="nextInfo('SecondToThird');">Next</submit>
+            </div>
+            <div class="col-lg-5"></div>
+        </div>
+        </section>
+        <section v-if="!isSectionOneUserInfo && !isSectionTwoUserInfo && isSectionThreeUserInfo">
         <div class="row" style="margin: 0px !important;">
             <div class="col-lg-3"></div>
             <div style="margin-top: 10px; font-family: anton;" class="col-lg-6">
-                <label class="text-white">Telephone :</label>
+                <label class="text-white">CARD DETAILS:</label>
                 <input class="form-control bg-dark btn-outline-light text-white" placeholder="e.g: 07654 123 456" v-model="userTelephoneNumber" />
             </div>
             <div class="col-lg-3"></div>
@@ -73,12 +94,13 @@
         <div class="row" style="margin: 0px !important;">
             <div class="col-lg-5"></div>
             <div style="margin-top: 30px; font-family: anton;" class="col-lg-2 text-center">
-                <span class="text-danger" v-if="signInStatus != null">{{signInStatus}}</span>
+                <!-- <span class="text-danger" v-if="signInStatus != null">{{signInStatus}}</span> -->
                 <submit class="btn btn-warning text-center" style="width: 100%;" v-on:click="userCheckDetails();">Sign Up</submit>
                 <span class="text-white">OR</span>
                 <router-link to="/LogIn" class="btn btn-warning text-center" style="width: 100%;">Log In</router-link>
             </div>
             <div class="col-lg-5"></div>
         </div>
+        </section>
     </section>
 </div>
